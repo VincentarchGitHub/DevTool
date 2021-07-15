@@ -1,0 +1,215 @@
+<div class="d-md-flex h-md-200 align-items-center">
+   
+
+<!-- Main Body of Project Information -->
+    <div class="col-lg-8 col-sm-12 p-3 left bg-light rounded">
+        <div>
+          
+          <h1 class="display-4"><%= @project.city %>, <%= @project.postcode %></h1><p> Ref. <%= @project.reference_number %></p>
+            <p class="lead">The <%= @project.site_area %>m² site area will result in a <%= @project.potential_homes %> <%= @project.development_type %> unit development capacity across <%= @project.storeys %> storeys.  The land is currently owned <%= @project.existing_land_ownership %>, with completed homes sold as <%= @project.proposed_ownership %>.</p>
+            <hr class="my-4">
+            <p>Piracy is piracy If you sail the seven seas or surf the net. Record firms, they're making losses But they still spend it like they're making it. It's fifty grand to make a fucking video And Sardy albums cost a fifth per track. So your favourite band They don't make that second album Dropped by their label 'cause they can't pay it back.  Well I got some news for you then my brother This is a business like any other You got your product, make money off it You count your losses against your profits And if you're thinking So? So? You don't know Underground, that's where we come from We don't wear no suits and we are not called The But chart success, that brings security You watch these brothers thinking Why not me? So show me where to sign And I'll write my name down in my own red blood Because there comes a time when you think a house might be nice And selling out don't mean a fuck, you see</p>
+            <br/>
+
+          <%= link_to 'Edit', edit_project_path(@project), class:"btn btn-secondary" %> 
+          <%= link_to 'Back', projects_path, class:"btn btn-dark" %>
+        </div>
+    </div>
+
+
+<!-- RHS Control Panel -->
+    <div class="bg-white rounded p-5 shadow">
+      
+      <h5 class="card-title text-center">Invest</h5>
+      <h2 class="h6 font-weight-bold text-center mb-4">DEVELOPMENT FINANCE</h2>
+        <div class="progress mx-auto" data-value='20'>
+            <span class="progress-left">
+            <span class="progress-bar border-primary"></span>
+            </span>
+            <span class="progress-right">
+            <span class="progress-bar border-primary"></span>
+            </span>
+            <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+              <div class="h2 font-weight-bold">80<sup class="small-text-gray">%</sup><br></div>
+            </div><!-- value at the middle of the gauge -->
+        </div>
+
+        <!-- first below gauge text container -->
+        <div class="row text-center mt-4">
+            <div class="col-6 border-right">
+              <div class="h4 font-weight-bold mb-0"><span class="small text-gray">£</span><%= @project.cost_of_work_stages_2_to_3 %></div><span class="small text-gray">RAISE AMOUNT</span>
+            </div>
+            <div class="col-6">
+              <div class="h4 font-weight-bold mb-0"><%= @project.work_stage_2_to_3_roi %><sup class="small">%</sup></div><span class="small text-gray">EST RETURN</span>
+            </div>
+        </div>
+
+        <!-- second below gauge text container -->
+        <div class="row text-center mt-4">
+            <div class="col-6 border-right">
+              <div class="h4 font-weight-bold mb-0">2-3</div><span class="small text-gray">WORK STAGES</span>
+            </div>
+            <div class="col-6">
+              <div class="h4 font-weight-bold mb-0"><span class="small text-gray">£</span><%= @project.gross_development_value %></div><span class="small text-gray">GDV</span>
+            </div>
+          </div>
+          <br/>
+        
+        <!-- Form Input -->
+          <div class="card-body">
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Enter Amount" aria-label="Example text with button addon" aria-describedby="button-addon1">
+              <div class="input-group-prepend">
+                <button class="btn btn-success" type="button" id="button-addon1">Invest</button>
+              </div>
+            </div>
+          </div>
+
+
+
+
+    </div>
+</div>  
+            
+
+<br/>
+
+<div class="p-5">
+ 
+  <p>
+    <strong>Image:</strong>
+    <% if @project.image.attached? %>
+      <%= image_tag @project.image, width: "400px" %>
+    <% end  %>
+  </p>
+
+  <p>
+    <strong>Images:</strong>
+    <% if @project.images.attached? %>
+      <% @project.images.each do |image| %>
+        <%= image_tag image, width: "400px" %>
+      <% end  %>
+    <% end  %>
+  </p>
+
+  <p>
+    <strong>Reference number:</strong>
+    <%= @project.reference_number %>
+  </p>
+
+  <p>
+    <strong>Postcode:</strong>
+    <%= @project.postcode %>
+  </p>
+
+  <p>
+    <strong>City:</strong>
+    <%= @project.city %>
+  </p>
+
+  <p>
+    <strong>Site area:</strong>
+    <%= @project.site_area %>
+  </p>
+
+  <p>
+    <strong>Gross internal area:</strong>
+    <%= @project.gross_internal_area %>
+  </p>
+
+  <p>
+    <strong>Net internal area:</strong>
+    <%= @project.net_internal_area %>
+  </p>
+
+  <p>
+    <strong>Storeys:</strong>
+    <%= @project.storeys %>
+  </p>
+
+  <p>
+    <strong>Basement:</strong>
+    <%= @project.basement %>
+  </p>
+
+  <p>
+    <strong>Potential homes:</strong>
+    <%= @project.potential_homes %>
+  </p>
+
+  <p>
+    <strong>Total landowner earnings:</strong>
+    <%= @project.total_landowner_earnings %>
+  </p>
+
+  <p>
+    <strong>Increase in landowner earnings:</strong>
+    <%= @project.increase_in_landowner_earnings %>
+  </p>
+
+  <p>
+    <strong>Gross development value:</strong>
+    <%= @project.gross_development_value %>
+  </p>
+
+  <p>
+    <strong>Cost of development:</strong>
+    <%= @project.cost_of_development %>
+  </p>
+
+  <p>
+    <strong>Cost of work stages 2 to 3:</strong>
+    <%= @project.cost_of_work_stages_2_to_3 %>
+  </p>
+
+  <p>
+    <strong>Cost of work stages 4 to 6:</strong>
+    <%= @project.cost_of_work_stages_4_to_6 %>
+  </p>
+
+  <p>
+    <strong>Residual land value:</strong>
+    <%= @project.residual_land_value %>
+  </p>
+
+  <p>
+    <strong>Development type:</strong>
+    <%= @project.development_type %>
+  </p>
+
+  <p>
+    <strong>Work stage 2 to 3 programme mths:</strong>
+    <%= @project.work_stage_2_to_3_programme_mths %>
+  </p>
+
+  <p>
+    <strong>Work stage 4 to 6 programme mths:</strong>
+    <%= @project.work_stage_4_to_6_programme_mths %>
+  </p>
+
+  <p>
+    <strong>Existing land ownership:</strong>
+    <%= @project.existing_land_ownership %>
+  </p>
+
+  <p>
+    <strong>Proposed ownership:</strong>
+    <%= @project.proposed_ownership %>
+  </p>
+
+  <p>
+    <strong>Work stage 2 to 3 roi:</strong>
+    <%= @project.work_stage_2_to_3_roi %>
+  </p>
+
+  <p>
+    <strong>Work stage 4 to 6 roi:</strong>
+    <%= @project.work_stage_4_to_6_roi %>
+  </p>
+
+  <p>
+    <strong>Average unit value:</strong>
+    <%= @project.average_unit_value %>
+  </p>
+
+</div>

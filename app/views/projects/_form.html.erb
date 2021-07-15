@@ -1,0 +1,177 @@
+<%= form_with(model: project) do |form| %>
+  <% if project.errors.any? %>
+
+  
+
+    <div id="error_explanation">
+      <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+      <ul>
+        <% project.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group">
+    <%= form.label :reference_number %>
+    <%= form.text_field :reference_number, class:"form-control", placeholder:"Enter Value" %>
+  </div>
+
+<!-- User ID hidden from form but logged into project user id column when project is created -->
+<div class="field form-group">
+    <% form.label :user_id %>
+    <%= form.number_field :user_id, id: :project_user_id, class:"form-control", value:current_user.id, type: :hidden %>
+  </div>
+ 
+<br/>
+
+  <div class="field form-group">
+    <%= form.label :postcode %>
+    <%= form.text_field :postcode, class:"form-control", placeholder:"Enter Value" %>
+  </div>
+<br/>
+
+<div class="field form-group">
+    <%= form.label :images %>
+    <%= form.file_field :images, multiple: true %>
+  </div>
+<br/>
+
+  <div class="field form-group">
+    <%= form.label :city %>
+    <%= form.text_field :city, class:"form-control", placeholder:"Enter Value" %>
+  </div>
+<br/>
+
+  <div class="field form-group">
+    <%= form.label :site_area %>
+    <%= form.number_field :site_area, class:"form-control", placeholder:"Enter Value" %>
+  </div>
+<br/>
+
+  <div class="field form-group">
+    <%= form.label :gross_internal_area %>
+    <%= form.number_field :gross_internal_area, class:"form-control", placeholder:"Enter Value" %>
+  </div>
+<br/>
+
+  <div class="field form-group">
+    <%= form.label :net_internal_area %>
+    <%= form.number_field :net_internal_area, class:"form-control", placeholder:"Enter Value" %>
+  </div>
+<br/>
+
+  <div class="field form-group">
+    <%= form.label :storeys %>
+    <%= form.number_field :storeys, class:"form-control", placeholder:"Enter Value" %>
+  </div>
+<br/>
+  <div class="form-check">
+    <%= form.check_box :basement, class: 'form-check-input' %>
+    <label class="form-check-label" for="defaultCheck1"><%= form.label :basement %></label>
+  </div>
+<br/>
+
+  <div class="field form-group">
+    <%= form.label :potential_homes %>
+    <%= form.number_field :potential_homes, class:"form-control", placeholder:"Enter Value" %>
+  </div>
+<br/>
+
+  <div class="field form-group">
+    <%= form.label :total_landowner_earnings %>
+    <%= form.number_field :total_landowner_earnings, class:"form-control", placeholder:"Enter Value" %>
+  </div>
+<br/>
+
+  <div class="field form-group">
+    <%= form.label :increase_in_landowner_earnings %>
+    <%= form.number_field :increase_in_landowner_earnings, class:"form-control", placeholder:"Enter Value" %>
+  </div>
+<br/>
+
+  <div class="field form-group">
+    <%= form.label :gross_development_value %>
+    <%= form.number_field :gross_development_value, class:"form-control", placeholder:"Enter Value" %>
+  </div>
+<br/>
+
+  <div class="field form-group">
+    <%= form.label :cost_of_development %>
+    <%= form.number_field :cost_of_development, class:"form-control", placeholder:"Enter Value" %>
+  </div>
+<br/>
+
+  <div class="field form-group">
+    <%= form.label :cost_of_work_stages_2_to_3 %>
+    <%= form.number_field :cost_of_work_stages_2_to_3, class:"form-control", placeholder:"Enter Value" %>
+  </div>
+<br/>
+
+  <div class="field form-group">
+    <%= form.label :cost_of_work_stages_4_to_6 %>
+    <%= form.number_field :cost_of_work_stages_4_to_6, class:"form-control", placeholder:"Enter Value" %>
+  </div>
+<br/>
+
+  <div class="field form-group">
+    <%= form.label :residual_land_value %>
+    <%= form.number_field :residual_land_value, class:"form-control", placeholder:"Enter Value" %>
+  </div>
+<br/>
+
+  <div class="field form-group">
+    <%= form.label :development_type %>
+    <%= form.text_field :development_type, class:"form-control", placeholder:"Enter Value" %>
+  </div>
+<br/>
+
+  <div class="field form-group">
+    <%= form.label :work_stage_2_to_3_programme_mths %>
+    <%= form.number_field :work_stage_2_to_3_programme_mths, class:"form-control", placeholder:"Enter Value" %>
+  </div>
+<br/>
+
+  <div class="field form-group">
+    <%= form.label :work_stage_4_to_6_programme_mths %>
+    <%= form.number_field :work_stage_4_to_6_programme_mths, class:"form-control", placeholder:"Enter Value" %>
+  </div>
+<br/>
+
+  <div class="field form-group">
+    <%= form.label :existing_land_ownership %>
+    <%= form.text_field :existing_land_ownership, class:"form-control", placeholder:"Enter Value" %>
+  </div>
+<br/>
+
+  <div class="field form-group">
+    <%= form.label :proposed_ownership %>
+    <%= form.text_field :proposed_ownership, class:"form-control", placeholder:"Enter Value" %>
+  </div>
+<br/>
+
+  <div class="field form-group">
+    <%= form.label :work_stage_2_to_3_roi %>
+    <%= form.number_field :work_stage_2_to_3_roi, class:"form-control", placeholder:"Enter Value" %>
+  </div>
+<br/>
+
+  <div class="field form-group">
+    <%= form.label :work_stage_4_to_6_roi %>
+    <%= form.number_field :work_stage_4_to_6_roi, class:"form-control", placeholder:"Enter Value" %>
+  </div>
+<br/>
+
+  <div class="field form-group">
+    <%= form.label :average_unit_value %>
+    <%= form.number_field :average_unit_value, class:"form-control", placeholder:"Enter Value" %>
+  </div>
+<br/>
+
+  <div">
+    <%= form.submit class:"btn btn-success" %>
+  </div>
+<br/>
+<% end %>

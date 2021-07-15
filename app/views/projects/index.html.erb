@@ -1,0 +1,75 @@
+<h1>Projects</h1>  <div><%= link_to "New Project", new_project_path, class:"btn btn-success" %></div>
+
+
+
+<table class="table table-striped table-bordered table-hover">
+  <thead class="table-dark">
+    <tr>
+      <th colspan="3"></th>
+      <th>Reference number</th>
+      <th>Postcode</th>
+      <th>City</th>
+      <th>Site area</th>
+      <th>Gross internal area</th>
+      <th>Net internal area</th>
+      <th>Storeys</th>
+      <th>Basement</th>
+      <th>Potential homes</th>
+      <th>Total landowner earnings</th>
+      <th>Increase in landowner earnings</th>
+      <th>Gross development value</th>
+      <th>Cost of development</th>
+      <th>Cost of work stages 2 to 3</th>
+      <th>Cost of work stages 4 to 6</th>
+      <th>Residual land value</th>
+      <th>Development type</th>
+      <th>Work stage 2 to 3 programme mths</th>
+      <th>Work stage 4 to 6 programme mths</th>
+      <th>Existing land ownership</th>
+      <th>Proposed ownership</th>
+      <th>Work stage 2 to 3 roi</th>
+      <th>Work stage 4 to 6 roi</th>
+      <th>Average unit value</th>
+      <th>Images</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @projects.each do |project| %>
+      <tr>
+        <td><%= link_to 'Show', project %></td>
+        <td><%= link_to 'Edit', edit_project_path(project) %></td>
+        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= project.reference_number %></td>
+        <td><%= project.postcode %></td>
+        <td><%= project.city %></td>
+        <td><%= project.site_area %>m²</td>
+        <td><%= project.gross_internal_area %>m²</td>
+        <td><%= project.net_internal_area %>m²</td>
+        <td><%= project.storeys %></td>
+        <td><%= project.basement %></td>
+        <td><%= project.potential_homes %></td>
+        <td>£<%= project.total_landowner_earnings %></td>
+        <td>£<%= project.increase_in_landowner_earnings %></td>
+        <td>£<%= project.gross_development_value %></td>
+        <td>£<%= project.cost_of_development %></td>
+        <td>£<%= project.cost_of_work_stages_2_to_3 %></td>
+        <td>£<%= project.cost_of_work_stages_4_to_6 %></td>
+        <td>£<%= project.residual_land_value %></td>
+        <td><%= project.development_type %></td>
+        <td><%= project.work_stage_2_to_3_programme_mths %></td>
+        <td><%= project.work_stage_4_to_6_programme_mths %></td>
+        <td><%= project.existing_land_ownership %></td>
+        <td><%= project.proposed_ownership %></td>
+        <td><%= project.work_stage_2_to_3_roi %>%</td>
+        <td><%= project.work_stage_4_to_6_roi %>%</td>
+        <td>£<%= project.average_unit_value %></td>
+        <td><%= image_tag project.image, width: "100px" if project.image.attached? %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%# link_to 'New Project', new_project_path %>

@@ -1,0 +1,53 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  reference_number: MyString
+  postcode: MyString
+  city: MyString
+  site_area: 1
+  gross_internal_area: 1
+  net_internal_area: 1
+  storeys: 1
+  basement: false
+  potential_homes: 1
+  total_landowner_earnings: 1
+  increase_in_landowner_earnings: 1
+  gross_development_value: 1
+  cost_of_development: 1
+  cost_of_work_stages_2_to_3: 1
+  cost_of_work_stages_4_to_6: 1
+  residual_land_value: 1
+  development_type: MyString
+  work_stage_2_to_3_programme_mths: 1
+  work_stage_4_to_6_programme_mths: 1
+  existing_land_ownership: MyString
+  proposed_ownership: MyString
+  work_stage_2_to_3_roi: 1
+  work_stage_4_to_6_roi: 1
+  average_unit_value: 1
+
+two:
+  reference_number: MyString
+  postcode: MyString
+  city: MyString
+  site_area: 1
+  gross_internal_area: 1
+  net_internal_area: 1
+  storeys: 1
+  basement: false
+  potential_homes: 1
+  total_landowner_earnings: 1
+  increase_in_landowner_earnings: 1
+  gross_development_value: 1
+  cost_of_development: 1
+  cost_of_work_stages_2_to_3: 1
+  cost_of_work_stages_4_to_6: 1
+  residual_land_value: 1
+  development_type: MyString
+  work_stage_2_to_3_programme_mths: 1
+  work_stage_4_to_6_programme_mths: 1
+  existing_land_ownership: MyString
+  proposed_ownership: MyString
+  work_stage_2_to_3_roi: 1
+  work_stage_4_to_6_roi: 1
+  average_unit_value: 1
